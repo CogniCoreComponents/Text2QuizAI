@@ -36,11 +36,13 @@ const authOptions: NextAuthOptions = {
                                 email: email,
                             }),
                         });
-
                         if (res.ok) {
                             console.log("OK");
                             return true;
                         }
+                    }
+                    else {
+                        console.log("User exists: ", email);
                     }
                 } catch (error) {
                     console.log("ERROR");
@@ -48,9 +50,6 @@ const authOptions: NextAuthOptions = {
                     return false;
                 }
             }
-            console.log("account is null");
-            // If 'account' is null, or for any other provider, you might want to handle it differently.
-            // For simplicity, this example returns true.
             return true;
         },
     },
