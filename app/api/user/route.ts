@@ -22,14 +22,3 @@ export async function POST(request: Request) {
         return NextResponse.json({message: "Error during user creation"}, {status: 300});
     }
 }
-
-export async function GET(request: Request){
-    const session = await getSession({ request } as any);
-    if (!session || !session.user) {
-        return NextResponse.json({ message: 'Unauthorized' }, {status: 400});
-    }
-
-    // Optionally, fetch more detailed user information from your database here
-    // For demonstration, we're just returning the session's user info
-    return NextResponse.json({ user: session.user }, {status: 200});
-}
