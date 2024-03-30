@@ -4,6 +4,7 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import { connectMongoDB } from "@/app/lib/mongodb";
 import User from "../../../models/user";
+//klnjhfljhehfqeljfheqljfh
 
 // Ensuring environment variables are correctly typed
 const clientId: string = process.env.GOOGLE_CLIENT_ID || "";
